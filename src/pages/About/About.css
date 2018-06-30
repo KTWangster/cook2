@@ -1,0 +1,24 @@
+.aboutText {
+    padding-top: 15px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 200%;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-top: 12px;
+}
+
+.containerBox {
+    padding: 20px 80px;
+    color: white;
+}
+
+.border {
+    margin-top: 22px;
+    margin-left: 20px;
+    border-right: 1px solid #fff;
+    height: 72px;
+    position: absolute;
+}

@@ -1,0 +1,31 @@
+import React, { Component } from 'react'
+import {Row, Container } from "../../components/Grid";
+import { UserInput } from "../../components/UserLog";
+
+class Login extends Component {
+    render() {
+        return (
+            <Container fluid>
+                <Row>
+                    <div className="col-sm-6">
+                        <form className="login">
+                            <p>Username</p>
+                                <UserInput 
+                                    name="username"
+                                    placeholder="Username"
+                                />
+                            <p>Password</p>
+                                <UserInput 
+                                    name="password"
+                                    placeholder="Password"
+                                />
+                            <button className="btn btn-warning loginBtn">Login</button>
+                        </form>
+                    </div>
+                </Row>
+            </Container>
+        )
+    }
+}
+
+export default Login;
