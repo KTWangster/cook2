@@ -1,0 +1,105 @@
+textarea.form-control {
+    border: 2px solid #6f4d67;
+    /* border-image-source: linear-gradient(-65deg, #FF1F99, #FF7D18, #FED92A); */
+    border-image-source: #6f4d67;
+    border-image-slice: 2;
+    border-radius: 0px;
+    background-color: #fefbf0;
+    color: #6f4d67;
+    font-family: 'FontAwesome', sans-serif!important;
+    box-shadow: none;
+    margin-top: 25px;
+}
+
+textarea.form-control:focus {
+    border: 1.5px solid #6f4d67;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+input.userLog {
+    height: 50px;
+    border: 2px solid #6f4d67;
+    border-image-source: linear-gradient(45deg, #4c75a0, #6f4d67);
+    border-image-slice: 2;
+    border-radius: 0px;
+    background-color: #fefbf0;
+    color: #6f4d67;
+    font-family: 'FontAwesome', sans-serif!important;
+    box-shadow: none;
+}
+
+.userLog:focus {
+    border: 1.5px solid #6f4d67;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+form {
+    margin: 50px auto;
+}
+
+.btn-warning {
+    border: 0px solid #6f4d67;
+    border-radius: 0px;
+    padding: 10px 20px;
+    color: #fefbf0;
+    margin-bottom: 120px;
+    text-transform: uppercase;
+}
+
+
+/* Login/Register Buttons */
+
+form.login {
+    margin-top: 150px;
+}
+
+.loginBtn,
+.registerBtn {
+    margin-top: 30px;
+    border-radius: 0px;
+}
+
+.loginBtn {
+    border: 2px solid #6f4d67;
+    border-image-source: linear-gradient(45deg, #4c75a0, #6f4d67);
+    border-image-slice: 2;
+    border-radius: 0px;
+    background-color: #fefbf0;
+    color: #6f4d67;
+}
+
+.registerBtn {
+    margin-left: 0px;
+    border: 2px solid #6f4d67;
+    border-image-source: linear-gradient(45deg, #4c75a0, #6f4d67);
+    border-image-slice: 2;
+    border-radius: 0px;
+    background-color: #fefbf0;
+    color: #6f4d67;
+    font-family: 'FontAwesome', sans-serif!important;
+}
+
+.addBtn {
+    border: 2px solid #6f4d67;
+    border-image-source: linear-gradient(45deg, #4c75a0, #6f4d67);
+    border-image-slice: 2;
+    border-radius: 0px;
+    background-color: #fefbf0;
+    color: #6f4d67;
+    font-family: 'FontAwesome', sans-serif!important;
+    margin: 20px 0px!important;
+}
+
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus,
+.btn-warning:visited {
+    border: 2px solid #6f4d67;
+    border-radius: 0px;
+    background: #6f4d67;
+    color: #fefbf0;
+    box-shadow: none;
+    outline: none;
+}

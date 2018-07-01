@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Contact from "./components/Contact";
 import './App.css';
 
 const App = () => 
@@ -13,12 +14,13 @@ const App = () =>
   <div>
     <Nav />
 <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/About" component={About} />
-      <Route exact path="/Register" component={Register} />
-      <Route exact path="/Login" component={Login} />
-      <Route component={Home} />
-    </Switch>
+  <Route exact path="/" component={Home} />
+  <Route exact path="/About" component={About} />
+  <Route exact path="/Contact" component={Contact} />
+  <Route exact path="/Register" component={Register} />
+  <Route exact path="/Login" component={Login} />
+  <Route component={Home} />
+</Switch>
   </div>
   </Router>;
 
