@@ -4,10 +4,10 @@ import { UserInput } from "../../components/UserLog";
 
 const Register = props => {
     let user = {
-        display_name: $("#firstname").val().trim() + " " + $("#lastname").val().trim(),
-        username: $("#username").val().trim(),
-        password: $("#password").val().trim(),
-        location: $("#city").val().trim() + ", " + $("#state").val().trim() + " " + $("#zipcode").val().trim()
+        // display_name: $("#firstname").val().trim() + " " + $("#lastname").val().trim(),
+        // username: $("#username").val().trim(),
+        // password: $("#password").val().trim(),
+        // location: $("#city").val().trim() + ", " + $("#state").val().trim() + " " + $("#zipcode").val().trim()
     };
 
             <div>
