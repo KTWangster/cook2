@@ -10,8 +10,8 @@ const Jumbotron = ({ children }) =>
     </div>
     <div className="caption">
    
-      <h1>Cooky App</h1>
-      <p>Yum it's so delicious</p>
+      <h1>Learn to Cook</h1>
+      <p>Impress all your friends</p>
     </div>
   </div>
 

@@ -16,6 +16,9 @@ class About extends Component {
                         </div>
                     </div>
                     </Row>
+                    <Row>
+                    
+                    </Row>
                 </Container>
             </div>
         )
