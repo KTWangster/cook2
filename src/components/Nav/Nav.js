@@ -11,6 +11,16 @@ const Nav = () =>
             </p>
             </div>
 
+
+        <div class="dropdown">
+  <button class="dropbtn">Classes</button>
+  <div class="dropdown-content">
+    <a href="#">A la Carte</a>
+    <a href="#">Packages</a>
+  </div>
+</div>
+
+
             <div id="navbar" className="navbar-collapse collapse">
                 <ul className="nav navbar-nav">
                     <li className={window.location.pathname === "/about" ? "active" : ""}>
