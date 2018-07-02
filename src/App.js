@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Alacarte from "./pages/Alacarte";
+import ClassPkgs from "./pages/ClassPkgs";
 import Contact from "./components/Contact";
 import './App.css';
 
@@ -20,8 +22,9 @@ const App = () =>
   <Route exact path="/Contact" component={Contact} />
   <Route exact path="/Register" component={Register} />
   <Route exact path="/Login" component={Login} />
+  <Route exact path="/Alacarte" component={Alacarte} />
+  <Route exact path="/ClassPkgs" component={ClassPkgs} />
   <Route component={Home} />
-  
 </Switch>
 <Footer />
   </div>
