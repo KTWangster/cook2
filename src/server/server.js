@@ -1,19 +1,12 @@
 require("dotenv").config();
 const express = require('express');
 const fs = require('fs');
-const historyApiFallback = require('connect-history-api-fallback');
 const mongoose = require('mongoose');
 const path = require('path');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const config = require('../config/config');
-const webpackConfig = require('../webpack.config');
 
 let uri = "mongodb://heroku_dvxxfl9v:jk2njtfr9npm90brse4ijt57qc@ds123981.mlab.com:23981/heroku_dvxxfl9v";
-
-const isDev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 8080;
 
 const ROOT = process.env.PORT ? "https://kjk-cooky.herokuapp.com/" : "http://localhost:8080";
