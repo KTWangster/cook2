@@ -3,11 +3,13 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import MenuCard from "../../components/MenuCard";
 import "./Alacarte.css"
+import ProductList from "../../components/ProductList/ProductList";
 
 class Alacarte extends Component {
-    render() {
-        return (
-            <Container fluid>
+  render() {
+    const options = [{ title: "Homemade Pasta", description: "The best ever!" }, { title: "Homemade Sausages", description: "Really good!" }, { title: "Charcuterie", description: "Oh man!" }];
+    return (
+      <Container fluid>
                 <Row>
                     <Jumbotron />
                 </Row>
@@ -19,12 +21,10 @@ class Alacarte extends Component {
                         </div>
                     </Col>
                 </Row>
-                <Row>
-                    <MenuCard />
-                </Row>
+              <ProductList list={options} /> 
             </Container>
-        )
-    }
+    )
+  }
 }
 
 export default Alacarte;

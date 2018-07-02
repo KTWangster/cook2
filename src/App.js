@@ -10,9 +10,10 @@ import Login from "./pages/Login";
 import Alacarte from "./pages/Alacarte";
 import ClassPkgs from "./pages/ClassPkgs";
 import Contact from "./components/Contact";
+import Chatbot from "./pages/Chatbot";
 import './App.css';
 
-const App = () => 
+const App = () =>
   <Router>
   <div>
     <Nav />
@@ -24,6 +25,7 @@ const App = () =>
   <Route exact path="/Login" component={Login} />
   <Route exact path="/Alacarte" component={Alacarte} />
   <Route exact path="/ClassPkgs" component={ClassPkgs} />
+  <Route exact path="/Chatbot" component = {Chatbot} />
   <Route component={Home} />
 </Switch>
 <Footer />
@@ -31,21 +33,3 @@ const App = () =>
   </Router>;
 
 export default App;
-
-/* class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
-
-export default App; */

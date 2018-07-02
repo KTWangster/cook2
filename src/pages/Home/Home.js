@@ -5,14 +5,14 @@ import Chatbot from "../../components/Chatbot";
 import "./Home.css"
 
 class Home extends Component {
-    // Sets component's initial state
-    state = {
+  // Sets component's initial state
+  state = {
 
-    };
+  };
 
-    render() {
-        return (
-            <Container fluid>
+  render() {
+    return (
+      <Container fluid>
                 <Row>
                     <Jumbotron />
                 </Row>
@@ -30,10 +30,9 @@ class Home extends Component {
                             </div>
                     </Col>
                 </Row>
-                <Chatbot />
             </Container>
-        )
-    }
+    )
+  }
 }
 
 export default Home;
