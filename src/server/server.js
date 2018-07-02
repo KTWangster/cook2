@@ -11,10 +11,12 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 
+let uri = "mongodb://heroku_dvxxfl9v:jk2njtfr9npm90brse4ijt57qc@ds123981.mlab.com:23981/heroku_dvxxfl9v";
+
 const isDev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 8080;
 
-const ROOT = process.env.PORT ? "https://quiet-wave-14314.herokuapp.com/" : "http://localhost:8080";
+const ROOT = process.env.PORT ? "https://kjk-cooky.herokuapp.com/" : "http://localhost:8080";
 
 // Auth
 var passport = require("passport");
@@ -28,7 +30,7 @@ var db = require("./models/Counter.js");
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db_dev : config.db);
+mongoose.connect(uri);
 mongoose.Promise = global.Promise;
 
 const app = express();
@@ -90,36 +92,6 @@ app.use(express.static("public"));
 // require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 require('./routes')(app);
-
-if (isDev) {
-  const compiler = webpack(webpackConfig);
-
-  app.use(historyApiFallback({
-    verbose: false
-  }));
-
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    contentBase: path.resolve(__dirname, '../client/public'),
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  }));
-
-  app.use(webpackHotMiddleware(compiler));
-  app.use(express.static(path.resolve(__dirname, '../dist')));
-} else {
-  app.use(express.static(path.resolve(__dirname, '../dist')));
-  app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
-    res.end();
-  });
-}
 
 // app.listen(port, '0.0.0.0', (err) => {
 //   if (err) {

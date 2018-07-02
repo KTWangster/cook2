@@ -1,18 +1,25 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var Class = sequelize.define('Class', {
-    name: DataTypes.STRING,
-    time: DataTypes.INTEGER,
-    location: DataTypes.STRING,
-    category: DataTypes.STRING
-  }, {});
-  Class.associate = function (models) {
-    // associations can be defined here
-    Class.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-  return Class;
-};
+const mongoose = require('mongoose');
+
+const ClassSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  time: {
+    type: Integer,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  }
+});
+
+var Class = mongoose.model("Class", ClassSchema);
+
+// Export the Article model
+module.exports = Class;
