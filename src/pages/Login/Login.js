@@ -23,6 +23,7 @@ class Login extends Component {
                         </form>
                     </div>
                     <a class="g-signin2" href="/auth/google">Sign In with Google</a>
+                    {/* <button href="/auth/google">Sign In with Google</button> */}
                 </Row>
             </Container>
         )

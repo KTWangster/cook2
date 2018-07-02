@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import { Row, Container } from "../../components/Grid";
 import { UserInput } from "../../components/UserLog";
 
-class Register extends Component {
-    render() {
-        return (
+const Register = props => {
+    let user = {
+        display_name: $("#firstname").val().trim() + " " + $("#lastname").val().trim(),
+        username: $("#username").val().trim(),
+        password: $("#password").val().trim(),
+        location: $("#city").val().trim() + ", " + $("#state").val().trim() + " " + $("#zipcode").val().trim()
+    };
+
             <div>
                 <Container fluid>
                     <Row>
@@ -38,21 +43,19 @@ class Register extends Component {
                             <p>State</p>
                                 <UserInput 
                                     name="state"
-                                    placeholder="Pennsylvania"
+                                    placeholder="PA"
                                 />
                             <p>Zip Code</p>
                                 <UserInput 
                                     name="zipCode"
                                     placeholder="Zip Code"
                                 />
-                            <button className="btn btn-warning registerBtn">Register</button>
+                            <button className="btn btn-warning registerBtn" onClick={() => props.createUser(user)}>Register</button>
                         </form>
                     </div>
                     </Row>
                 </Container>
             </div>
-        )
-    }
 }
 
-export default Register
+export default Register;

@@ -21,6 +21,7 @@ module.exports = function (app) {
     }),
     function (req, res) {
       res.redirect('/');
+      // window.location.assign('/About');
     }
   );
 
@@ -59,5 +60,20 @@ module.exports = function (app) {
         }
         gAuth = getAuth();
       });
+    });
+
+    app.get("/users", (req, res) => {
+      db.User.find({})
+        .then(dbUser => res.json(dbUser))
+        .catch(err => res.json(err));
+    });
+
+    app.post("/createUser", (req, res) => {
+      db.User.create({
+        display_name: req.body.display_name,
+        username: req.body.username,
+        password: req.body.password,
+        location: req.body.location
+      }).then(dbUser => res.json(dbUser));
     });
 };

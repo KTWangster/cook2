@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
 import Nav from "./components/Nav";
@@ -12,23 +12,42 @@ import ClassPkgs from "./pages/ClassPkgs";
 import Contact from "./components/Contact";
 import './App.css';
 
-const App = () => 
-  <Router>
-  <div>
-    <Nav />
-<Switch>
-  <Route exact path="/" component={Home} />
-  <Route exact path="/About" component={About} />
-  <Route exact path="/Contact" component={Contact} />
-  <Route exact path="/Register" component={Register} />
-  <Route exact path="/Login" component={Login} />
-  <Route exact path="/Alacarte" component={Alacarte} />
-  <Route exact path="/ClassPkgs" component={ClassPkgs} />
-  <Route component={Home} />
-</Switch>
-<Footer />
-  </div>
-  </Router>;
+class App extends Component {
+  createUser = user => {
+    var request = new XMLHttpRequest();
+    request.open('POST', '/createUser', true);
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    let data = {
+      display_name: user.display_name,
+      username: user.username,
+      password: user.password,
+      location: user.location
+    };
+    request.send(data);
+    console.log(data);
+  }
+
+  render() {
+    return (
+      <Router>
+        <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/About" component={About} />
+          <Route exact path="/Contact" component={Contact} />
+          <Route exact path="/Register" component={Register} createUser={this.createUser}/>
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Alacarte" component={Alacarte} />
+          <Route exact path="/ClassPkgs" component={ClassPkgs} />
+          <Route component={Home} />
+        </Switch>
+        <Footer />
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default App;
 
