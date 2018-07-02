@@ -22,6 +22,7 @@ class Login extends Component {
                             <button className="btn btn-warning loginBtn">Login</button>
                         </form>
                     </div>
+                    <a class="g-signin2" href="/auth/google">Sign In with Google</a>
                 </Row>
             </Container>
         )
