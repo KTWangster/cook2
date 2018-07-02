@@ -1,19 +1,20 @@
 import React from "react";
 import "./MenuCard.css"
 
-const MenuCard = () => (
-    <div className="card">
+const MenuCard = (props) => (
+  <div className="card">
       <div className="img-container">
-        {/* <img alt={props.itemName} src={props.itemImage} /> */}
+        <img alt={props.title} src={props.imageSrc} />
       </div>
       <div className="content">
-      <p>A description of the class.</p>
+      <h1>{props.title}</h1>
+      <p>{props.description}</p>
       </div>
       {/* <span onClick={() => props.removeFriend(props.id)} className="remove">𝘅</span> */}
     </div>
-  );
-  
-  export default MenuCard;
+);
+
+export default MenuCard;
 
 // class MenuCard extends Component {
 //     render() {

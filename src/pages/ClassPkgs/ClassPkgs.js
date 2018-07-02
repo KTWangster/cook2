@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
+import ProductList from "../../components/ProductList";
 import "./ClassPkgs.css"
 
 class ClassPkgs extends Component {
-    render() {
-        return (
-            <Container fluid>
+  render() {
+    const options = [{ title: "Monthly", description: "The best ever!" }, { title: "Weekly", description: "Really good!" }, { title: "Ten Class Package", description: "Oh man!" }];
+    return (
+      <Container fluid>
             <Row>
                 <Jumbotron />
             </Row>
@@ -18,10 +20,10 @@ class ClassPkgs extends Component {
                     </div>
                 </Col>
             </Row>
-                
+            <ProductList list={options} /> 
             </Container>
-        )
-    }
+    )
+  }
 }
 
 export default ClassPkgs;
