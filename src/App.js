@@ -13,19 +13,6 @@ import Contact from "./components/Contact";
 import './App.css';
 
 class App extends Component {
-  createUser = user => {
-    var request = new XMLHttpRequest();
-    request.open('POST', '/createUser', true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    let data = {
-      display_name: user.display_name,
-      username: user.username,
-      password: user.password,
-      location: user.location
-    };
-    request.send(data);
-    console.log(data);
-  }
 
   render() {
     return (
