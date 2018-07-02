@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
-import Footer from "../../components/Footer";
+import Chatbot from "../../components/Chatbot";
 import "./Home.css"
 
 class Home extends Component {
@@ -20,7 +20,7 @@ class Home extends Component {
                     <Col size="md-12">
                     </Col>
                 </Row>
-                <Footer />
+                <Chatbot />
             </Container>
         )
     }

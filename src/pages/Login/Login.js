@@ -12,12 +12,12 @@ class Login extends Component {
                             <p>Username</p>
                                 <UserInput 
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder="&#xf007;   Username"
                                 />
                             <p>Password</p>
                                 <UserInput 
                                     name="password"
-                                    placeholder="Password"
+                                    placeholder="&#xf023;   Password"
                                 />
                             <button className="btn btn-warning loginBtn">Login</button>
                         </form>

@@ -13,38 +13,38 @@ class Register extends Component {
                             <p>Username</p>
                                 <UserInput 
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder="&#xf007;   Username"
                                 />
                             <p>Password</p>
-                            <UserInput 
-                                name="password"
-                                placeholder="Password"
-                            />
+                                <UserInput 
+                                    name="password"
+                                    placeholder="&#xf023;   Password"
+                                />
                             <p>First Name</p>
-                            <UserInput 
-                                name="firstName"
-                                placeholder="First Name"
-                            />
+                                <UserInput 
+                                    name="firstName"
+                                    placeholder="First Name"
+                                />
                             <p>Last Name</p>
-                            <UserInput 
-                                name="lastName"
-                                placeholder="Last Name"
-                            />
+                                <UserInput 
+                                    name="lastName"
+                                    placeholder="Last Name"
+                                />
                             <p>City</p>
-                            <UserInput 
-                                name="city"
-                                placeholder="Philadelphia"
-                            />
+                                <UserInput 
+                                    name="city"
+                                    placeholder="Philadelphia"
+                                />
                             <p>State</p>
-                            <UserInput 
-                                name="state"
-                                placeholder="Pennsylvania"
-                            />
+                                <UserInput 
+                                    name="state"
+                                    placeholder="Pennsylvania"
+                                />
                             <p>Zip Code</p>
-                            <UserInput 
-                                name="zipCode"
-                                placeholder="Zip Code"
-                            />
+                                <UserInput 
+                                    name="zipCode"
+                                    placeholder="Zip Code"
+                                />
                             <button className="btn btn-warning registerBtn">Register</button>
                         </form>
                     </div>

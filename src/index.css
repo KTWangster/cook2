@@ -2,5 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #fefbf0;
+    background-color: #ffffff;
+    /*background: linear-gradient(-45deg, #5399af, #64a38d, #75ac6d)*/
 }
+
+iframe {}
