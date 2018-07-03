@@ -8,6 +8,10 @@ class Register extends Component {
         this.createUser = this.createUser.bind(this);
         this.state = { 
             user: {
+                display_name: "Kristian Fidrych",
+                username: "kfidrych",
+                password: "password",
+                location: "Philadelphia, PA 19148"
             // display_name: $("#firstname").val().trim() + " " + $("#lastname").val().trim(),
             // username: $("#username").val().trim(),
             // password: $("#password").val().trim(),
