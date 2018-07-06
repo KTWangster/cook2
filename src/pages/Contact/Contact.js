@@ -4,6 +4,21 @@ import { LogText, UserInput } from "../../components/UserLog";
 import "./Contact.css";
 
 class Contact extends Component {
+// Setes component's initial state.
+state = {
+    name: "",
+    email: "",
+    comment: ""
+};
+
+// Updates component state when user types into input field.
+handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+        [name]: value
+    });
+};
+
     render() {
         return (
             <div>
