@@ -21,6 +21,8 @@ class Alacarte extends Component {
                 </Row>
                 <Row>
                     <MenuCard />
+                    <MenuCard />
+                    <MenuCard />
                 </Row>
             </Container>
         )
