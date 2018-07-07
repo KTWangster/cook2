@@ -26,6 +26,8 @@ const App = () =>
   <Route exact path="/Alacarte" component={Alacarte} />
   <Route exact path="/ClassPkgs" component={ClassPkgs} />
   <Route exact path="/Chatbot" component = {Chatbot} />
+  <Route exact path="/Account" compenent = {Account} />
+  <Route exact path="/Admin" compenent = {Admin} />
   <Route component={Home} />
 </Switch>
 <Footer />
