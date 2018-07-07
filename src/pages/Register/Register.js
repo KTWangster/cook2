@@ -6,29 +6,30 @@ class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            name: "",
             username: "",
             password: "",
             email: "",
-            firstName: "",
-            lastName: "",
             address: "",
             city: "",
             state: "", 
             zip: "",
+            phone: "",
         }
     };
 
     handleUser = event => {
         this.setState({
             user: {
+            name: this.state.user.name,
             username: event.target.value,
             password: this.state.user.password,
             email: this.state.user.email,
-            name: this.state.user.name,
             address: this.state.user.address,
             city: this.state.user.city,
             state: this.state.user.state,
             zip: this.state.user.password,
+            phone: this.state.user.phone
             }
         });
     }
@@ -41,6 +42,11 @@ class Register extends Component {
                     <Row>
                     <div className="col-sm-6">
                         <form className="login">
+                            <p>Name</p>
+                                <UserInput 
+                                    name="name"
+                                    placeholder="Name"
+                                />
                             <p>Username</p>
                                 <UserInput 
                                     name="username"
@@ -56,11 +62,11 @@ class Register extends Component {
                                     name="email"
                                     placeholder="Email"
                                 />
-                            <p>Name</p>
-                                <UserInput 
-                                    name="name"
-                                    placeholder="Name"
-                                />
+                            <p>Address</p>
+                            <UserInput 
+                                name="address"
+                                placeholder="Address"
+                            />
                             <p>City</p>
                                 <UserInput 
                                     name="city"
@@ -76,6 +82,11 @@ class Register extends Component {
                                     name="zipCode"
                                     placeholder="Zip Code"
                                 />
+                            <p>Phone Number</p>
+                            <UserInput 
+                                name="phonne"
+                                placeholder="xxx-xxx-xxxx"
+                            />
                             <button className="btn btn-warning registerBtn">Register</button>
                         </form>
                     </div>
