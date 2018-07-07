@@ -22,7 +22,7 @@ class Register extends Component {
 
     createUser = user => {
         var request = new XMLHttpRequest();
-        request.open('POST', '/createUser', true);
+        request.open('POST', '/register', true);
         request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         let data = {
           display_name: user.display_name,
