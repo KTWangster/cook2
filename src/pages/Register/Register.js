@@ -3,6 +3,38 @@ import { Row, Container } from "../../components/Grid";
 import { UserInput } from "../../components/UserLog";
 
 class Register extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: "",
+            password: "",
+            email: "",
+            firstName: "",
+            lastName: "",
+            address: "",
+            city: "",
+            state: "", 
+            zip: "",
+        }
+    };
+
+    handleUser = event => {
+        this.setState({
+            user: {
+            username: event.target.value,
+            password: this.state.user.password,
+            email: this.state.user.email,
+            firstName: this.state.user.firstName,
+            lastName: this.state.user.lastName,
+            address: this.state.user.address,
+            city: this.state.user.city,
+            state: this.state.user.state,
+            zip: this.state.user.password,
+            }
+        });
+    }
+    
+    
     render() {
         return (
             <div>
@@ -19,6 +51,11 @@ class Register extends Component {
                                 <UserInput 
                                     name="password"
                                     placeholder="&#xf023;   Password"
+                                />
+                            <p>Email</p>
+                                <UserInput 
+                                    name="email"
+                                    placeholder="Email"
                                 />
                             <p>First Name</p>
                                 <UserInput 
