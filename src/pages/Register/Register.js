@@ -24,8 +24,7 @@ class Register extends Component {
             username: event.target.value,
             password: this.state.user.password,
             email: this.state.user.email,
-            firstName: this.state.user.firstName,
-            lastName: this.state.user.lastName,
+            name: this.state.user.name,
             address: this.state.user.address,
             city: this.state.user.city,
             state: this.state.user.state,
@@ -57,15 +56,10 @@ class Register extends Component {
                                     name="email"
                                     placeholder="Email"
                                 />
-                            <p>First Name</p>
+                            <p>Name</p>
                                 <UserInput 
-                                    name="firstName"
-                                    placeholder="First Name"
-                                />
-                            <p>Last Name</p>
-                                <UserInput 
-                                    name="lastName"
-                                    placeholder="Last Name"
+                                    name="name"
+                                    placeholder="Name"
                                 />
                             <p>City</p>
                                 <UserInput 
