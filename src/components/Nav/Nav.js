@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () =>
-    <nav className="navbar navbar-inverse navbar-fixed-top">
+  <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container-fluid">
             <div className="navbar-header">
             <p id="logo" className={window.location.pathname === "/" ? "active" : ""}>
@@ -31,9 +31,6 @@ const Nav = () =>
                     <li className={window.location.pathname === "/about" ? "active" : ""}>
                         <Link className="aboutLink" to="/About">About</Link>
                     </li>
-                    <li className={window.location.pathname === "contact" ? "active" : ""}>
-                        <Link className="contactLink" to="/Contact">Contact</Link>
-                    </li>
                     <li className={window.location.pathname === "register" ? "active" : ""}>
                         <Link className="registerLink" to="/Register">Register</Link>
                     </li>
@@ -45,4 +42,4 @@ const Nav = () =>
         </div>
     </nav>
 
-    export default Nav;
+export default Nav;
