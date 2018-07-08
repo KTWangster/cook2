@@ -9,8 +9,10 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Alacarte from "./pages/Alacarte";
 import ClassPkgs from "./pages/ClassPkgs";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 import Chatbot from "./pages/Chatbot";
+import Account from "./pages/Account";
+import Admin from "./pages/Admin";
 import './App.css';
 
 const App = () =>
@@ -26,8 +28,8 @@ const App = () =>
   <Route exact path="/Alacarte" component={Alacarte} />
   <Route exact path="/ClassPkgs" component={ClassPkgs} />
   <Route exact path="/Chatbot" component = {Chatbot} />
-  <Route exact path="/Account" compenent = {Account} />
-  <Route exact path="/Admin" compenent = {Admin} />
+  <Route exact path="/Account" component = {Account} />
+  <Route exact path="/Admin" component = {Admin} />
   <Route component={Home} />
 </Switch>
 <Footer />
