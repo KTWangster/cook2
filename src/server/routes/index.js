@@ -69,4 +69,13 @@ router.get('/ping', (req, res) => {
   res.status(200).send("pong!");
 });
 
+// Route for Stripe checkout
+router.post('/charge', (req, res, next) => {
+  charge(req).then(data => {
+    res.render('thanks');
+  }).catch(error => {
+    res.render('error', error);
+  });
+});
+
 module.exports = router;

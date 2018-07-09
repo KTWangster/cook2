@@ -10,8 +10,21 @@ const MenuCard = (props) => (
       <h1>{props.title}</h1>
       <p>{props.description}</p>
       </div>
-      {/* <span onClick={() => props.removeFriend(props.id)} className="remove">𝘅</span> */}
+      <form action="/charge" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+      data-amount={props.price}
+      data-currency="usd"
+      data-name="Cooky"
+      data-label="Purchase Class"
+      data-description={props.title}
+      data-image="../../public/assets/img/logo.png"
+      data-zip-code="true"
+      data-locale="auto">
+    </script>
+  </form> 
     </div>
-  );
-  
-  export default MenuCard;
+);
+
+export default MenuCard;
