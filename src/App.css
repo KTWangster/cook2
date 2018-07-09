@@ -23,6 +23,23 @@
     font-size: large;
 }
 
+p {
+    color: #87a097;
+    text-align: left;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.App-button {
+    border: 3px solid #87a097;
+    border-image-source: linear-gradient(45deg, #5399af, #64a38d, #75ac6d);
+    border-image-slice: 2;
+    border-radius: 30px!important;
+    background: transparent;
+    color: #87a097;
+    margin: 20px 0px!important;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
