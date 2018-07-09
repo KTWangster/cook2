@@ -9,7 +9,7 @@ const MenuCard = (props) => (
       <div className="content">
       <h1>{props.title}</h1>
       <p>{props.description}</p>
-      </div>
+     </div>
       <form action="/charge" method="POST">
     <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -19,7 +19,7 @@ const MenuCard = (props) => (
       data-name="Cooky"
       data-label="Purchase Class"
       data-description={props.title}
-      data-image="../../public/assets/img/logo.png"
+      data-image= "../../public/assets/img/logo.png"
       data-zip-code="true"
       data-locale="auto">
     </script>
