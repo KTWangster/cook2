@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Container } from "../../components/Grid";
 
-class About extends Component {
+class Admin extends Component {
   render() {
     return (
       <div>
@@ -26,4 +26,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default Admin;
