@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 import Chatbot from "./pages/Chatbot";
 import UserProfile from "./pages/UserProfile";
 import Admin from "./pages/Admin";
-import Schedule from "./pages/Schedule";
+// import Schedule from "./pages/Schedule";
 import './App.css';
 
 const App = () =>
@@ -31,7 +31,7 @@ const App = () =>
   <Route exact path="/Chatbot" component = {Chatbot} />
   <Route exact path="/UserProfile" component = {UserProfile} />
   <Route exact path="/Admin" component = {Admin} />
-  <Route exact path="/Schedule" component = {Schedule} />
+  {/* <Route exact path="/Schedule" component = {Schedule} /> */}
   <Route component={Home} />
 </Switch>
 <Footer />
