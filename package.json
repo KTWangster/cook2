@@ -44,5 +44,8 @@
     "main": "index.js",
     "repository": "https://github.com/KTWangster/cook2.git",
     "author": "Katie Wang <ktwang16@mac.com>",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "firebase": "^5.2.0"
+    }
 }
