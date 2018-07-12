@@ -7,9 +7,10 @@ const config = {
     projectId: "chefapp-92b3c",
     storageBucket: "chefapp-92b3c.appspot.com",
     messagingSenderId: "938311576581"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
+export const providerFB = new firebase.auth.FacebookAuthProvider();
 export const auth = firebase.auth();
 export default firebase;

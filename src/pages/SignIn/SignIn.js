@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import firebase, { auth, provider} from '../../components/Firebase';
+import firebase, { auth, provider, providerFB} from '../../components/Firebase';
 import "./SignIn.css"
 
 class SignIn extends React.Component {
@@ -48,8 +48,8 @@ class SignIn extends React.Component {
 	}
 	signInFacebook(e) {
 		e.preventDefault();
-		var provider = new firebase.auth.FacebookAuthProvider();
-		firebase.auth().signInWithPopup(provider).then(function(result) {
+		var providerFB = new firebase.auth.FacebookAuthProvider();
+		firebase.auth().signInWithPopup(providerFB).then(function(result) {
 		  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
 		  var token = result.credential.accessToken;
 		  // The signed-in user info.
@@ -67,16 +67,15 @@ class SignIn extends React.Component {
 		});
 	}
 	signInWithEmail() {
-		// e.preventDefault();
 		const user = this.state.user;
 		firebase.auth().signInWithEmailAndPassword(user.email, user.password)
 			.then((res) => {
 				const userId = res.uid;
 				firebase.database().ref(userId)
 					.on('value', (data) => {
-						console.log("lalala", data.val()) 
+						console.log(data.val()) 
 					})
-						this.context.router.push('/dashboard');
+						this.context.router.push('/userlog');
 			})
 			.catch((err) => {
 				this.setState({
@@ -85,7 +84,6 @@ class SignIn extends React.Component {
 			})
 	}
 	handleSubmit(e) {
-		console.log("does it work?");
 		e.preventDefault();
 	}
 	render() {
