@@ -44,7 +44,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // mongoose
-let uri = "mongodb://heroku_dvxxfl9v:jk2njtfr9npm90brse4ijt57qc@ds123981.mlab.com:23981/heroku_dvxxfl9v";
+let uri = "mongodb://heroku_n5b5lljc:pr1v09c9ge410sfltcnapeesd1@ds235411.mlab.com:35411/heroku_n5b5lljc";
 mongoose.connect(uri);
 
 // catch 404 and forward to error handler
