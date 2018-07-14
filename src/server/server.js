@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 // passport config
-var User = require('./models/user');
+var User = require('./models/User');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
