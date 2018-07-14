@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.css';
+import './AdminNav.css';
 
 const AdminNav = () =>
   <nav className="navbar navbar-inverse navbar-fixed-top">

@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Row, Container } from "../../components/Grid";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import UserProfileNav from "../../components/UserProfileNav";
+import MyAccount from "../MyAccount";
+import UpcomingClasses from "../UpcomingClasses";
 
 class UserProfile extends Component {
   render() {
     return (
-      <Router>
       <div>
                  <UserProfileNav /> 
              <Switch>
@@ -12,7 +15,6 @@ class UserProfile extends Component {
   <Route exact path="/UpcomingClasses" component={UpcomingClasses} />
   </Switch>
   </div>
-            </Router>
     )
   }
 }

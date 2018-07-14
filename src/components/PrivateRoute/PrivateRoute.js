@@ -6,10 +6,11 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
+import Auth from "../../server/Auth";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 <Route {...rest} render={(props) => (
-    fakeAuth.isAuthenticated === true
+    Auth.isAuthenticated === true
       ? <Component {...props} />: <Redirect to='/login' />
 )
 }

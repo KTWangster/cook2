@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { Row, Container } from "../../components/Grid";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AdminNav from "../../components/AdminNav";
+import AdminSchedule from "../AdminSchedule";
+import UpcomingClasses from "../UpcomingClasses";
+import EditContent from "../EditContent";
 
 class Admin extends Component {
   render() {
     return (
-      <Router>
       <div>
              <AdminNav /> 
              <Switch>
@@ -13,7 +17,6 @@ class Admin extends Component {
   <Route exact path="/EditContent" component={EditContent} />
   </Switch>
   </div>
-            </Router>
     )
   }
 }
