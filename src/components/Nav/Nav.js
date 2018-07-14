@@ -37,6 +37,9 @@ const Nav = () =>
                     <li className={window.location.pathname === "login" ? "active" : ""}>
                         <Link className="loginLink" to="/Login">Login</Link>
                     </li>
+                    <li className={window.location.pathname === "signin" ? "active" : ""}>
+                        <Link className="signinLink" to="/SignIn">Sign In - Testing</Link>
+                    </li>
                     <li className={window.location.pathname === "chatbot" ? "active" : ""}>
                         <Link className="ChatbotLink" to="/Chatbot">Speak with a Representative</Link>
                     </li>

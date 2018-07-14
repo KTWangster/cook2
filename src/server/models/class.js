@@ -6,7 +6,7 @@ const ClassSchema = new mongoose.Schema({
     required: true
   },
   time: {
-    type: Integer,
+    type: Number,
     required: true
   },
   location: {
@@ -19,7 +19,4 @@ const ClassSchema = new mongoose.Schema({
   }
 });
 
-var Class = mongoose.model("Class", ClassSchema);
-
-// Export the Article model
-module.exports = Class;
+module.exports = mongoose.model("Class", ClassSchema);

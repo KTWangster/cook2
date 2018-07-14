@@ -1,58 +1,12 @@
-const express = require('express');
-const passport = require('passport');
-const User = require('../models/user');
-const router = express.Router();
+const fs = require('fs');
+const path = require('path');
 
-
-router.get('/', (req, res) => {
-  res.render('index', {
-    user: req.user
+module.exports = (app) => {
+  // API routes
+  fs.readdirSync(__dirname + '/api/').forEach((file) => {
+    require(`./api/${file.substr(0, file.indexOf('.'))}`)(app);
   });
-});
-
-router.get('/register', (req, res) => {
-  res.render('register', {});
-});
-
-router.post('/register', (req, res, next) => {
-  User.register(new User({
-    username: req.body.username
-  }), req.body.password, (err, user) => {
-    if (err) {
-      return res.render('register', {
-        error: err.message
-      });
-    }
-
-    passport.authenticate('local')(req, res, () => {
-      req.session.save((err) => {
-        if (err) {
-          return next(err);
-        }
-        res.redirect('/');
-      });
-    });
-  });
-});
-
-
-router.get('/login', (req, res) => {
-  res.render('login', {
-    user: req.user,
-    error: req.flash('error')
-  });
-});
-
-router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/login',
-  failureFlash: true
-}), (req, res, next) => {
-  req.session.save((err) => {
-    if (err) {
-      return next(err);
-    }
-    res.redirect('/');
-  });
+<<<<<<< HEAD
 });
 
 router.get('/logout', (req, res, next) => {
@@ -79,3 +33,6 @@ router.post('/charge', (req, res, next) => {
 });
 
 module.exports = router;
+=======
+};
+>>>>>>> 597789f7f0824c4da7bf9cb5a476e760781920a1

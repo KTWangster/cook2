@@ -55,36 +55,22 @@ h2 {
 .classpkgsBtn {
     float: right!important;
     color: #fff;
-    border: none;
-    border-radius: 25px;
     margin: 40px auto;
-}
-
-.alacarteBtn {
-    border: 3px solid #87a097;
-    border-image-source: linear-gradient(45deg, #5399af, #64a38d, #75ac6d);
-    border-image-slice: 2;
-    border-radius: 30px!important;
-    background: transparent;
-    color: #87a097;
-    margin: 20px 0px!important;
-}
-
-.alacarteBtn:hover {
-    background: #5399af;
-}
-
-.classpkgsBtn {
+    font-weight: 700;
+    height: 50px;
+    padding: 10px 50px !important;
     background: linear-gradient(-30deg, #5399af, #64a38d, #75ac6d);
-    padding: 10px 20px;
+    border-radius: 10px;
+    border: none
 }
 
+.alacarteBtn:hover,
 .classpkgsBtn:hover {
-    border: 0px;
+    border: 2px solid #5399af;
     /* border-radius: 30px; */
-    background: linear-gradient(30deg, #5399af, #64a38d, #75ac6d);
+    background: none;
     /* background: #87a097; */
-    color: #fefbf0;
+    color: #5399af;
     box-shadow: none;
     outline: none;
 }

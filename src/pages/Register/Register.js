@@ -2,127 +2,250 @@ import React, { Component } from "react";
 import { Row, Container } from "../../components/Grid";
 import { UserInput } from "../../components/UserLog";
 
+import {
+    getFromStorage,
+    setInStorage
+  } from "../../utils/storage"; 
+
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.createUser = this.createUser.bind(this);
-        this.state = { 
-            user: {
-                display_name: "Kristian Fidrych",
-                username: "kfidrych",
-                password: "password",
-                location: "Philadelphia, PA 19148"
-            // display_name: $("#firstname").val().trim() + " " + $("#lastname").val().trim(),
-            // username: $("#username").val().trim(),
-            // password: $("#password").val().trim(),
-            // location: $("#city").val().trim() + ", " + $("#state").val().trim() + " " + $("#zipcode").val().trim()
+    
+        this.state = {
+          isLoading: true,
+          token: "",
+          signUpError: "",
+          signInError: "",
+          signInEmail: "",
+          signInPassword: "",
+          signUpLastName: "",
+          signUpEmail: "",
+          signUpPassword: "",
+          signUpCity: "",
+          signUpState: "",
+          signUpZip: ""
+        };
+
+        this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
+        this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
+        this.onTextboxChangeSignUpFirstName = this.onTextboxChangeSignUpFirstName.bind(this);
+        this.onTextboxChangeSignUpLastName = this.onTextboxChangeSignUpLastName.bind(this);
+        this.onTextboxChangeSignUpCity = this.onTextboxChangeSignUpCity.bind(this);
+        this.onTextboxChangeSignUpState = this.onTextboxChangeSignUpState.bind(this);
+        this.onTextboxChangeSignUpZip = this.onTextboxChangeSignUpZip.bind(this);
+
+        this.onSignUp = this.onSignUp.bind(this); 
+      };
+    
+      componentDidMount() {
+        const token = getFromStorage('the_main_app');
+        if (token) {
+          fetch('/api/account/verify?token' + token)
+              .then(res => res.json())
+              .then(json => {
+                if (json.success) {
+                  this.setState({
+                    token: token,
+                    isLoading: false
+                  })
+                } else {
+                  this.setState({
+                    isLoading: false
+                  })
+                }
+              });
+        } else {
+          this.setState({
+            isLoading: false
+          })
+        }
+      };
+
+    onTextboxChangeSignUpEmail(event) {
+        this.setState({
+            signUpEmail: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpPassword(event) {
+        this.setState({
+            signUpPassword: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpFirstName(event) {
+        this.setState({
+            signUpFirstName: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpLastName(event) {
+        this.setState({
+            signUpLastName: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpCity(event) {
+        this.setState({
+            signUpCity: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpState(event) {
+        this.setState({
+            signUpState: event.target.value
+        })
+    }
+
+    onTextboxChangeSignUpZip(event) {
+        this.setState({
+            signUpZip: event.target.value
+        })
+    }
+
+    onSignUp() {
+        const {
+            signUpEmail,
+            signUpPassword,
+            signUpFirstName,
+            signUpLastName,
+            signUpCity,
+            signUpState,
+            signUpZip
+        } = this.state;
+
+        this.setState({
+            isLoading: true
+        })
+
+        fetch("/api/account/signup", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: signUpEmail,
+                password: signUpPassword,
+                firstName: signUpFirstName,
+                lastName: signUpLastName,
+                location: signUpCity + ", " + signUpState + " " + signUpZip
+            }),
+        }).then(res => res.json())
+          .then(json => {
+              if (json.success) {
+                this.setState({
+                    signUpError: json.message,
+                    isLoading: false,
+                    signUpEmail: "",
+                    signUpPassword: "",
+                    signUpCity: "",
+                    signUpFirstName: "",
+                    signUpLastName: "",
+                    signUpState: "",
+                    signUpZip: ""
+                  });
+              } else {
+              this.setState({
+                signUpError: json.message,
+                isLoading: false
+              });
             }
-        };
+          })
     }
 
-//     super(props)
-//     this.state = {
-//         name: "",
-//         username: "",
-//         password: "",
-//         email: "",
-//         address: "",
-//         city: "",
-//         state: "", 
-//         zip: "",
-//         phone: "",
-//     }
-// };
-
-// handleUser = event => {
-//     this.setState({
-//         user: {
-//         name: this.state.user.name,
-//         username: event.target.value,
-//         password: this.state.user.password,
-//         email: this.state.user.email,
-//         address: this.state.user.address,
-//         city: this.state.user.city,
-//         state: this.state.user.state,
-//         zip: this.state.user.password,
-//         phone: this.state.user.phone
-//         }
-//     });
-// }
-
-    createUser = user => {
-        var request = new XMLHttpRequest();
-        request.open('POST', '/register', true);
-        request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-        let data = {
-          display_name: user.display_name,
-          username: user.username,
-          password: user.password,
-          location: user.location
-        };
-        request.send(data);
-        console.log(data);
-    }
 
     render() {
-        return (
-            <div>
-            <Container fluid>
-                <Row>
-                <div className="col-sm-6">
-                    <form className="login">
-                            <p>Name</p>
-                                <UserInput 
-                                    name="name"
-                                    placeholder="Name"
-                                />
-                            <p>Username</p>
-                                <UserInput 
-                                    name="username"
-                                    placeholder="&#xf007;   Username"
+        const {
+            isLoading,
+            token,
+            signInError,
+            signInEmail,
+            signInPassword,
+            signUpFirstName,
+            signUpLastName,
+            signUpEmail,
+            signUpPassword,
+            signUpCity,
+            signUpState,
+            signUpZip
+          } = this.state;
+
+          if (isLoading) {
+            return (<div><p>Loading...</p></div>)
+          }
+        
+        if (!token) {
+            return (
+                <div>
+                    {
+                        (signInError) ? (
+                            <p>{signInError}</p>
+                        ) : (null)
+                    }
+                    <Container fluid>
+                    <Row>
+                    <div className="col-sm-6">
+                        <form className="login">
+                            <p>Email</p>
+                                <UserInput
+                                    type="email" 
+                                    name="email"
+                                    placeholder="&#xf007;   Email"
+                                    value={signUpEmail}
+                                    onChange={this.onTextboxChangeSignUpEmail}
                                 />
                             <p>Password</p>
                                 <UserInput 
+                                    type="password"
                                     name="password"
                                     placeholder="&#xf023;   Password"
+                                    value={signUpPassword}
+                                    onChange={this.onTextboxChangeSignUpPassword}
                                 />
-                            <p>Email</p>
+                            <p>First Name</p>
                                 <UserInput 
-                                    name="email"
-                                    placeholder="Email"
+                                    name="firstName"
+                                    placeholder="First Name"
+                                    value={signUpFirstName}
+                                    onChange={this.onTextboxChangeSignUpFirstName}
                                 />
-                            <p>Address</p>
-                            <UserInput 
-                                name="address"
-                                placeholder="Address"
-                            />
+                            <p>Last Name</p>
+                                <UserInput 
+                                    name="lastName"
+                                    placeholder="Last Name"
+                                    value={signUpLastName}
+                                    onChange={this.onTextboxChangeSignUpLastName}
+                                />
                             <p>City</p>
                                 <UserInput 
                                     name="city"
                                     placeholder="Philadelphia"
+                                    value={signUpCity}
+                                    onChange={this.onTextboxChangeSignUpCity}
                                 />
                             <p>State</p>
                                 <UserInput 
                                     name="state"
-                                    placeholder="Pennsylvania"
+                                    placeholder="PA"
+                                    value={signUpState}
+                                    onChange={this.onTextboxChangeSignUpState}
                                 />
                             <p>Zip Code</p>
                                 <UserInput 
                                     name="zipCode"
                                     placeholder="Zip Code"
+                                    value={signUpZip}
+                                    onChange={this.onTextboxChangeSignUpZip}
                                 />
-                            <p>Phone Number</p>
-                            <UserInput 
-                                name="phonne"
-                                placeholder="xxx-xxx-xxxx"
-                            />
-                        <button className="btn btn-warning registerBtn" onClick={() => this.createUser(this.state.user)}>Register</button>
-                    </form>
-                </div>
-                </Row>
-            </Container>
-        </div>
-        )
+                            <button className="btn btn-warning registerBtn" onClick={this.onSignUp}>Register</button>
+                        </form>
+                    </div>
+                    </Row>
+                </Container>
+            </div>
+            )
+        }
+       
     }
            
 }

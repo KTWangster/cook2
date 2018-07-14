@@ -1,22 +1,4 @@
-require("dotenv").config();
-
 module.exports = {
-    "development": {
-        "username": process.env.DB_USER,
-        "password": process.env.DB_PASS,
-        "database": "cooky",
-        "host": process.env.DB_HOST,
-        "dialect": "mysql"
-    },
-    "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
-    },
-    "production": {
-        "use_env_variable": "JAWSDB_URL",
-        "dialect": "mysql"
-    }
-}
+    db: 'mongodb://heroku_n5b5lljc:pr1v09c9ge410sfltcnapeesd1@ds235411.mlab.com:35411/heroku_n5b5lljc',
+    db_dev: 'mongodb://localhost:27017/login_demo',
+  };

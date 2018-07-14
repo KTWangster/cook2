@@ -4,7 +4,7 @@ textarea.form-control {
     border: 3px solid #000000;
     border-image-source: linear-gradient(-65deg, #5399af, #64a38d, #75ac6d);
     border-image-slice: 2;
-    border-radius: 0px;
+    border-radius: 10px;
     background-color: #fff;
     color: #000000;
     font-family: 'FontAwesome', sans-serif!important;
@@ -14,7 +14,7 @@ textarea.form-control {
 
 textarea.form-control:focus {
     border: 3px solid #87a097;
-    border-radius: 0px;
+    border-radius: 10px;
     box-shadow: none;
 }
 
@@ -26,8 +26,8 @@ input.userInput {
     border: 3px solid #87a097;
     border-image-source: linear-gradient(45deg, #5399af, #64a38d, #75ac6d);
     border-image-slice: 2;
-    border-radius: 0px;
-    background-color: transparent;
+    border-radius: 10px;
+    background-color: #fff;
     color: #87a097;
     font-family: 'FontAwesome', sans-serif!important;
     box-shadow: none;
@@ -35,7 +35,7 @@ input.userInput {
 
 .userInput:focus {
     border: 3px solid #87a097;
-    border-radius: 0px;
+    border-radius: 10px;
     box-shadow: none;
 }
 
