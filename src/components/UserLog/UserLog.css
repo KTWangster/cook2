@@ -44,14 +44,6 @@ form {
 }
 
 .btn-warning {
-    /* border: 3px solid #87a097;
-    background: transparent;
-    color: #87a097;
-    /* border-image-source: linear-gradient(45deg, #5399af, #64a38d, #75ac6d); */
-    /* border-radius: 30px;
-    padding: 10px 20px;
-    margin-bottom: 120px;
-    text-transform: uppercase; */
     height: 50px;
     border: 3px solid #87a097;
     border-image-source: linear-gradient(45deg, #5399af, #64a38d, #75ac6d);
