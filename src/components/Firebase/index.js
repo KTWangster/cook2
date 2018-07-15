@@ -1,1 +1,2 @@
-export { default } from "./Firebase";
+export { firebase, provider, providerFB, auth }
+from "./Firebase";

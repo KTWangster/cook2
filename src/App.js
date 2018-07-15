@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
-import Firebase, { auth, provider } from './components/Firebase';
+import { firebase, auth, provider } from './components/Firebase';
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -16,10 +16,50 @@ import UserProfile from "./pages/UserProfile";
 import Admin from "./pages/Admin";
 import './App.css';
 
-const App = () =>
-  <Router>
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      items: [],
+      user: null
+    }
+  }
+  handleChange(e) {}
+
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
+  }
+
+  login() {
+    auth.signInwithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        this.setState({
+          user
+        });
+      });
+  }
+
+  // COMMENTED OUT UNTIL I CAN GET IT FUNCTIONING
+  // componentDidMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       this.setState({ user });
+  //     }
+  //   });
+  // }
+
+  render() {
+    return (
+      <Router>
   <div>
-    <Nav />
+    <Nav user={this.state.user} />
 <Switch>
   <Route exact path="/" component={Home} />
   <Route exact path="/About" component={About} />
@@ -35,6 +75,9 @@ const App = () =>
 </Switch>
 <Footer />
   </div>
-  </Router>;
+  </Router>
+    )
+  }
+}
 
 export default App;
