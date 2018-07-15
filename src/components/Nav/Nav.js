@@ -41,7 +41,7 @@ const Nav = () =>
                         <Link className="signinLink" to="/SignIn">Sign In - Testing</Link>
                     </li>
                     <li className={window.location.pathname === "chatbot" ? "active" : ""}>
-                        <Link className="ChatbotLink" to="/Chatbot">Speak with a Representative</Link>
+                        <Link className="ChatbotLink" to="/Chatbot">Chat With Us!</Link>
                     </li>
                 </ul>
             </div>
