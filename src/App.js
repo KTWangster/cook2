@@ -47,13 +47,16 @@ class App extends Component {
   }
 
   // COMMENTED OUT UNTIL I CAN GET IT FUNCTIONING
-  // componentDidMount() {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       this.setState({ user });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+        alert("signed in user");
+      } else {
+        alert("no user");
+      }
+    });
+  }
 
   render() {
     return (

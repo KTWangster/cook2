@@ -1,7 +1,7 @@
 import React from "react";
-import './Jumbotron.css';
+import './Slideshow.css';
 
-const Jumbotron = () =>
+const Slideshow = () =>
 
   <div className="jumbotron text-center">
     <div className="overlay">
@@ -15,4 +15,4 @@ const Jumbotron = () =>
   </div>
 
 
-export default Jumbotron;
+export default Slideshow;
